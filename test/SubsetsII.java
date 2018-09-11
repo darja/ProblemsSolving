@@ -16,13 +16,17 @@ public class SubsetsII extends NestedListTestCase {
     private void subsetsBack(LinkedList<List<Integer>> result, LinkedList<Integer> current, int[] nums, int index) {
         result.add(new ArrayList<>(current));
 
-        for (int i = index; i < nums.length; ++i) {
-            current.add(nums[i]);
+        int i = index;
 
-            if (!result.contains(current)) {
-                subsetsBack(result, current, nums, i + 1);
-            }
+        while (i < nums.length) {
+            current.add(nums[i]);
+            subsetsBack(result, current, nums, i + 1);
             current.removeLast();
+
+            ++i;
+            while (i < nums.length && nums[i] == nums[i - 1]) {
+                ++i;
+            }
         }
     }
 
