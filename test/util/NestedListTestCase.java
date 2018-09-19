@@ -9,7 +9,7 @@ public class NestedListTestCase extends TestCase {
         assertEquals("Nested list size", expected.length, actual.size());
 
         for (int[] ex : expected) {
-            boolean found = true;
+            boolean found = false;
 
             for (List<Integer> subset : actual) {
                 if (subset.size() != ex.length) {
@@ -29,5 +29,32 @@ public class NestedListTestCase extends TestCase {
             assertTrue(found);
         }
 
+    }
+
+    protected void assertEqualsOrdered(List<List<Integer>> actual, int[][] expected) {
+        assertEquals("Nested list size", expected.length, actual.size());
+
+        for (int[] ex : expected) {
+            boolean found = false;
+
+            for (List<Integer> subset : actual) {
+                if (subset.size() != ex.length) {
+                    continue;
+                }
+
+                found = true;
+                for (int i = 0; i < subset.size(); ++i) {
+                    if (subset.get(i) != ex[i]) {
+                        found = false;
+                        break;
+                    }
+                }
+
+                if (found) {
+                    break;
+                }
+            }
+            assertTrue(found);
+        }
     }
 }
