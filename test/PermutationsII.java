@@ -11,35 +11,36 @@ public class PermutationsII extends NestedListTestCase {
         }
 
         Arrays.sort(nums);
-        List<Integer> src = new ArrayList<>(nums.length);
-        for (int num : nums) {
-            src.add(num);
-        }
-        permuteBack(result, new LinkedList<Integer>(), src);
+        permuteBack(result, new LinkedList<Integer>(), nums, new boolean[nums.length]);
 
         return result;
     }
 
-    private void permuteBack(List<List<Integer>> result, LinkedList<Integer> current, List<Integer> src) {
-        int len = src.size();
-        if (len == 0) {
+    private void permuteBack(List<List<Integer>> result, LinkedList<Integer> current,
+                             int[] src, boolean[] visited) {
+        int len = src.length;
+        if (len == current.size()) {
             result.add(new ArrayList<>(current));
             return;
         }
 
         int i = 0;
         while (i < len) {
-            int item = src.get(i);
-            current.add(item);
-            src.remove(i);
+            if (visited[i]) {
+                i++;
+                continue;
+            }
 
-            permuteBack(result, current, src);
+            visited[i] = true;
+            current.add(src[i]);
 
-            src.add(i, item);
+            permuteBack(result, current, src, visited);
+
             current.removeLast();
-            i++;
+            visited[i] = false;
 
-            while (i < len && Objects.equals(src.get(i), src.get(i - 1))) {
+            i++;
+            while (i < len && src[i] == src[i-1]) {
                 i++;
             }
         }
