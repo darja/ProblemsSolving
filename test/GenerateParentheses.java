@@ -1,27 +1,9 @@
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class GenerateParentheses extends TestCase {
-    public List<String> generateParenthesis1(int n) {
-        Set<String> result = new HashSet<>();
-        if (n == 1) {
-            result.add("()");
-        } else if (n >= 1) {
-            List<String> prevResult = generateParenthesis(n - 1);
-
-            for (String item : prevResult) {
-                result.add("()" + item);
-                result.add("(" + item + ")");
-                result.add(item + "()");
-            }
-        }
-        return new ArrayList<>(result);
-    }
-
     public List<String> generateParenthesis(int n) {
         List<String> result = new ArrayList<>();
 
@@ -52,6 +34,11 @@ public class GenerateParentheses extends TestCase {
         testSingle(1, new String[] {"()"});
         testSingle(2, new String[] {"()()", "(())"});
         testSingle(3, new String[] {"()()()", "(())()", "((()))", "()(())", "(()())"});
+        testSingle(4, new String[] {"()()()()", "(()()())","(())(())",
+            "((())())", "(())()()", "()(())()",
+            "(((())))", "((()))()", "()((()))",
+            "(()(()))", "()()(())",
+            "((()()))", "()(()())", "(()())()"});
     }
 
     private void testSingle(int input, String[] expected) {
@@ -59,8 +46,7 @@ public class GenerateParentheses extends TestCase {
         List<String> result = generateParenthesis(input);
         long end = System.nanoTime();
 
-        System.out.printf("Time: %d ms", (end - start) / 1000);
-        System.out.println();
+        System.out.printf("%d: Time: %d mks\n", input, (end - start) / 1000);
 
         assertEquals(result.size(), expected.length);
 
