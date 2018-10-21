@@ -4,6 +4,40 @@ class RegularExpressionMatching: TestCase() {
     fun isMatch(input: String, pattern: String): Boolean {
         if (pattern.isEmpty()) return input.isEmpty()
 
+        val dp = Array(input.length + 1) { BooleanArray(pattern.length + 1) }
+
+        dp[input.length][pattern.length] = true
+
+        var symbolMatches: Boolean
+
+        for (i in input.length downTo 0) {
+            for (pi in pattern.length - 1 downTo 0) {
+                symbolMatches = symbolMatches(input, pattern, i, pi)
+
+                if (patternSymbolIsOptional(pattern, pi)) {
+                    dp[i][pi] =
+                        dp[i][pi + 2] ||    // matches previous group, can skip current one
+                        symbolMatches &&    // matches pattern symbol
+                        dp[i + 1][pi]       // the rest substring also matches current subpattern
+                } else {
+                    dp[i][pi] = symbolMatches && dp[i + 1][pi + 1]
+                }
+            }
+        }
+
+        return dp[0][0]
+    }
+
+    private fun symbolMatches(input: String, pattern: String, i: Int, pi: Int) =
+        i < input.length && (pattern[pi] == input[i] || pattern[pi] == '.')
+
+    private fun patternSymbolIsOptional(pattern: String, symbolIndex: Int) =
+        symbolIndex + 1 < pattern.length && pattern[symbolIndex + 1] == '*'
+
+
+    fun isMatch_Slow(input: String, pattern: String): Boolean {
+        if (pattern.isEmpty()) return input.isEmpty()
+
         return isMatchBack(input, pattern, 0, 0, null)
     }
 
@@ -110,6 +144,8 @@ class RegularExpressionMatching: TestCase() {
     fun testFail() {
         testNotMatches("gfjk", "")
         testNotMatches("", "a")
+        testNotMatches("", "a*.")
+        testNotMatches("", "a*b*.")
         testNotMatches("", "a*b*c")
 
         testNotMatches("aa", "a")
