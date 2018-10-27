@@ -30,7 +30,11 @@ public class TreeNode {
             }
             System.out.println();
             level = nextLevel;
-
         }
+    }
+
+    @Override
+    public String toString() {
+        return String.format("TreeNode[%s]", val);
     }
 }

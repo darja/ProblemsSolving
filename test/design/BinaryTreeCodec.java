@@ -3,7 +3,6 @@ package design;
 import util.TreeNode;
 
 import java.util.LinkedList;
-import java.util.List;
 
 @SuppressWarnings("WeakerAccess")
 public class BinaryTreeCodec {
@@ -14,36 +13,24 @@ public class BinaryTreeCodec {
         }
 
         StringBuilder sb = new StringBuilder();
-        List<TreeNode> rootLevel = new LinkedList<>();
-        rootLevel.add(root);
-        serializeFromLevel(sb, rootLevel);
+        LinkedList<TreeNode> nodes = new LinkedList<>();
+        nodes.add(root);
+
+        while (!nodes.isEmpty()) {
+            TreeNode current = nodes.removeFirst();
+            if (current != null) {
+                sb.append(current.val);
+                sb.append(',');
+                nodes.addLast(current.left);
+                nodes.addLast(current.right);
+            } else {
+                sb.append(',');
+            }
+
+        }
 
         int n = sb.length();
-
         return sb.substring(0, n - 1);
-    }
-
-    private void serializeFromLevel(StringBuilder sb, List<TreeNode> levelNodes) {
-        List<TreeNode> nextLevelNodes = new LinkedList<>();
-        boolean isOver = true;
-        for (TreeNode node : levelNodes) {
-            if (node != null) {
-                nextLevelNodes.add(node.left);
-                nextLevelNodes.add(node.right);
-                sb.append(node.val);
-                if (node.left != null || node.right != null) {
-                    isOver = false;
-                }
-            } else {
-                nextLevelNodes.add(null);
-                nextLevelNodes.add(null);
-            }
-            sb.append(',');
-        }
-
-        if (!isOver) {
-            serializeFromLevel(sb, nextLevelNodes);
-        }
     }
 
     // Decodes your encoded data to tree.
@@ -57,37 +44,25 @@ public class BinaryTreeCodec {
         int rootValue = Integer.parseInt(parts[0]);
         TreeNode root = new TreeNode(rootValue);
 
-        if (parts.length > 1) {
-            List<TreeNode> rootLevel = new LinkedList<>();
-            rootLevel.add(root);
-            deserializeFromLevel(parts, 1, rootLevel);
-        }
-        return root;
-    }
+        LinkedList<TreeNode> nodes = new LinkedList<>();
+        nodes.addLast(root);
 
-    private void deserializeFromLevel(String[] parts, int fromIndex, List<TreeNode> levelNodes) {
-        List<TreeNode> nextLevelNodes = new LinkedList<>();
-        int i = fromIndex;
-        for (TreeNode node : levelNodes) {
-            TreeNode left = null;
-            TreeNode right = null;
-            if (node != null) {
-                if (i >= parts.length) return;
-                left = createNodeFromString(parts[i]);
-                node.left = left;
-                i++;
-
-                if (i >= parts.length) return;
-                right = createNodeFromString(parts[i]);
-                node.right = right;
-                i++;
+        for (int i = 1; i < parts.length; i += 2) {
+            TreeNode current = nodes.removeFirst();
+            if (!parts[i].isEmpty()) {
+                TreeNode left = createNodeFromString(parts[i]);
+                current.left = left;
+                nodes.addLast(left);
             }
-            nextLevelNodes.add(left);
-            nextLevelNodes.add(right);
+
+            if (i + 1 < parts.length && !parts[i + 1].isEmpty()) {
+                TreeNode right = createNodeFromString(parts[i + 1]);
+                current.right = right;
+                nodes.addLast(right);
+            }
         }
-        if (i < parts.length) {
-            deserializeFromLevel(parts, i, nextLevelNodes);
-        }
+
+        return root;
     }
 
     private TreeNode createNodeFromString(String val) {

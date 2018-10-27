@@ -66,4 +66,14 @@ public class BinaryTreeCodecTest extends TreeTestCase {
         testTree(tree);
         // 1, 2, 3, 4, 5, 6, 7, , , 8, 9, 10, , ,
     }
+
+    public void testManyNulls() {
+        TreeNode tree = new TreeNode(5);
+        tree.left = new TreeNode(2);
+        tree.right = new TreeNode(3);
+        tree.right.left = new TreeNode(2);
+        tree.right.right = new TreeNode(4);
+        tree.right.right.left = new TreeNode(3);
+        tree.right.right.right = new TreeNode(1);
+    }
 }
