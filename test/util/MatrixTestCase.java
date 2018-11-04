@@ -36,4 +36,25 @@ public class MatrixTestCase extends TestCase {
             }
         }
     }
+
+    protected void assertMatricesEqualOrdered(int[][] expected, int[][] actual) {
+        if (expected == null) {
+            assertNull("Null expected", actual);
+            return;
+        }
+
+        assertEquals("Rows count", expected.length, actual.length);
+
+        if (expected.length == 0) {
+            return; // empty matrices
+        }
+
+        assertEquals("Cols count", expected[0].length, actual[0].length);
+
+        for (int i = 0; i < expected.length; ++i) {
+            for (int j = 0; j < expected[i].length; ++j) {
+                assertEquals(String.format("Item [%s][%s]", i, j), expected[i][j], actual[i][j]);
+            }
+        }
+    }
 }
