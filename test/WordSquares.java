@@ -1,50 +1,71 @@
 import util.ListTestCase;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 @SuppressWarnings("WeakerAccess")
 public class WordSquares extends ListTestCase {
     public List<List<String>> wordSquares(String[] words) {
+        Trie trie = new Trie();
+        for (String word : words) {
+            trie.insert(word, 0);
+        }
+
         List<List<String>> result = new LinkedList<>();
         LinkedList<String> interim = new LinkedList<>();
-        wordSquaresIter(result, words, interim, words[0].length());
+        for (String w : words) {
+            interim.add(w);
+            wordSquaresRec(result, interim, trie, words[0].length());
+            interim.removeLast();
+        }
 
         return result;
     }
 
-    private void wordSquaresIter(List<List<String>> result, String[] words, LinkedList<String> interim, int squareSize) {
-        if (interim.size() == squareSize) {
-            if (isWordSquare(interim)) {
-                result.add(new ArrayList<>(interim));
+    private void wordSquaresRec(List<List<String>> result, LinkedList<String> interim, Trie root, int squareSize) {
+        int prefixSize = interim.size();
+
+        if (prefixSize == squareSize) {
+            result.add(new ArrayList<>(interim));
+
+        } else {
+            Trie prefixTrie = root;
+            for (String word : interim) {
+                prefixTrie = prefixTrie.children.get(word.charAt(prefixSize));
+                if (prefixTrie == null) break;
             }
-            return;
-        }
 
-        for (String word : words) {
-            interim.add(word);
-            wordSquaresIter(result, words, interim, squareSize);
-            interim.removeLast();
-        }
-    }
-
-    private boolean isWordSquare(LinkedList<String> words) {
-        HashMap<String, Integer> code = new HashMap<>();
-        for (String word : words) {
-            code.put(word, code.containsKey(word) ? code.get(word) + 1 : 1);
-        }
-
-        int len = words.size();
-        for (int i = 0; i < len; ++i) {
-            for (int j = i + 1; j < len; ++j) {
-                if (words.get(i).charAt(j) != words.get(j).charAt(i)) {
-                    return false;
+            if (prefixTrie != null) {
+                for (String s: prefixTrie.strings) {
+                    interim.add(s);
+                    wordSquaresRec(result, interim, root, squareSize);
+                    interim.removeLast();
                 }
             }
         }
-        return true;
+    }
+
+    private class Trie {
+        Map<Character, Trie> children = new HashMap<>();
+        List<String> strings = new LinkedList<>();
+
+        void insert(String s, int fromIndex) {
+            strings.add(s);
+
+            if (fromIndex >= s.length()) return;
+
+            char currentChar = s.charAt(fromIndex);
+            if (!children.containsKey(currentChar)) {
+                Trie newChild = new Trie();
+                children.put(currentChar, newChild);
+            }
+            Trie child = children.get(currentChar);
+            child.insert(s, fromIndex + 1);
+        }
+
+        @Override
+        public String toString() {
+            return String.format("Trie [%s]", children.keySet());
+        }
     }
 
     private void testOne(String[] words, String[][] expected) {
