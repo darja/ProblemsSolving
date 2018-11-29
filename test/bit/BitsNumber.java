@@ -1,5 +1,11 @@
+package bit;
+
 import junit.framework.TestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/number-of-1-bits/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class BitsNumber extends TestCase {
     public void test() {
         testSingle(1, 1);

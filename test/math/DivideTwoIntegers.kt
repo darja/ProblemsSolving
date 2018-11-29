@@ -1,5 +1,11 @@
+package math
+
 import junit.framework.TestCase
 
+/**
+ * @see <a href="https://leetcode.com/problems/divide-two-integers/">Problem Description</a>
+ */
+@Suppress("MemberVisibilityCanBePrivate")
 class DivideTwoIntegers: TestCase() {
     fun divide(dividend: Int, divisor: Int): Int {
         if (divisor == Int.MIN_VALUE) {

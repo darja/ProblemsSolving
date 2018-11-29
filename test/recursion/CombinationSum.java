@@ -1,7 +1,14 @@
+package recursion;
+
 import util.MatrixTestCase;
 
 import java.util.*;
 
+/**
+ * @see <a href="https://leetcode.com/problems/combination-sum/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
+// todo may try again
 public class CombinationSum extends MatrixTestCase {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<>();

@@ -1,8 +1,14 @@
+package set;
+
 import junit.framework.TestCase;
 
 import java.util.Comparator;
 import java.util.TreeSet;
 
+/**
+ * @see <a href="https://leetcode.com/problems/contains-duplicate-iii/">Problem Description</a>
+ */
+// todo not accepted
 public class ContainsDuplicate3 extends TestCase {
 
     public void test() {

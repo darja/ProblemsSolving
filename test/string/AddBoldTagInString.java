@@ -1,5 +1,10 @@
+package string;
+
 import junit.framework.TestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/add-bold-tag-in-string">Problem Description</a>
+ */
 @SuppressWarnings("WeakerAccess")
 public class AddBoldTagInString extends TestCase {
     public String addBoldTag(String s, String[] dict) {

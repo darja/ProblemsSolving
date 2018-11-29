@@ -1,8 +1,14 @@
+package recursion;
+
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @see <a href="https://leetcode.com/problems/binary-watch/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class BinaryWatch extends TestCase {
     public List<String> readBinaryWatch(int lightsCount) {
         List<String> results = new ArrayList<>();

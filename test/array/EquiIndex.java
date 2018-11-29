@@ -1,3 +1,5 @@
+package array;
+
 import junit.framework.TestCase;
 
 public class EquiIndex extends TestCase {

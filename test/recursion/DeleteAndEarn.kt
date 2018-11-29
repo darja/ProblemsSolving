@@ -1,7 +1,12 @@
-
+package recursion
 import junit.framework.TestCase
 import java.util.*
 
+/**
+ * @see <a href="https://leetcode.com/problems/delete-and-earn/">Problem Description</a>
+ */
+@Suppress("MemberVisibilityCanBePrivate")
+// todo time limit exceeded
 class DeleteAndEarn : TestCase() {
     fun deleteAndEarn(nums: IntArray): Int {
         val map = HashMap<Int, Int>()

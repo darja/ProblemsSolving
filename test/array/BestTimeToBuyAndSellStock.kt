@@ -1,5 +1,11 @@
+package array
+
 import junit.framework.TestCase
 
+/**
+ * @see <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">Problem Description</a>
+ */
+@Suppress("MemberVisibilityCanBePrivate")
 class BestTimeToBuyAndSellStock : TestCase() {
     fun maxProfit(prices: IntArray): Int {
         if (prices.size < 2) {

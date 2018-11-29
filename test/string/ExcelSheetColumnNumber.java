@@ -1,5 +1,11 @@
+package string;
+
 import junit.framework.TestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/excel-sheet-column-number/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class ExcelSheetColumnNumber extends TestCase {
     public void test() {
         assertEquals(1, titleToNumber("A"));

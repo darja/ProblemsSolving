@@ -3,6 +3,11 @@ import util.ListTestCase;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @see <a href="https://leetcode.com/problems/expression-add-operators/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
+// todo can be better
 public class ExpressionAddOperators extends ListTestCase {
     public List<String> addOperators(String num, int target) {
         List<String> result = new ArrayList<>();

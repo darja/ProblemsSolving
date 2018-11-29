@@ -1,5 +1,10 @@
+package math;
+
 import junit.framework.TestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/divide-two-integers/">Problem Description</a>
+ */
 public class DivideTwoIntegers1 extends TestCase {
     public int divide(int dividend, int divisor) {
         if (divisor == 0) {

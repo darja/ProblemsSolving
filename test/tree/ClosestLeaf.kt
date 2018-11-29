@@ -1,6 +1,13 @@
+package tree
+
 import junit.framework.TestCase
 import util.TreeNode
 
+/**
+ * @see <a href="https://leetcode.com/problems/closest-leaf-in-a-binary-tree/">Problem Description</a>
+ */
+@Suppress("MemberVisibilityCanBePrivate")
+// todo not accepted
 class ClosestLeaf : TestCase() {
     fun findClosestLeaf(root: TreeNode?, k: Int): Int {
         val kNode = findNode(root, k) ?: return k

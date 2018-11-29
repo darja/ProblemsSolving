@@ -1,5 +1,11 @@
+package array
+
 import junit.framework.TestCase
 
+/**
+ * @see <a href="https://leetcode.com/problems/add-binary/">Problem Description</a>
+ */
+@Suppress("MemberVisibilityCanBePrivate")
 class AddBinary: TestCase() {
     fun addBinary(a: String, b: String): String {
         var long = a

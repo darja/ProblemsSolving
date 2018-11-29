@@ -1,5 +1,11 @@
+package math;
+
 import junit.framework.TestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/count-numbers-with-unique-digits/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class CountNumbersWithUniqueDigits extends TestCase {
     public int countNumbersWithUniqueDigits(int n) {
         if (n < 0 || n >= 10) {

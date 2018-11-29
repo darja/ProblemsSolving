@@ -1,7 +1,14 @@
+package stack;
+
 import util.ArrayTestCase;
 
 import java.util.Stack;
 
+/**
+ * @see <a href="https://leetcode.com/problems/daily-temperatures/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
+// todo may be improved
 public class DailyTemperatures extends ArrayTestCase {
     public int[] dailyTemperatures(int[] temperatures) {
         Stack<Integer> stack = new Stack<>();

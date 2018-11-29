@@ -1,8 +1,14 @@
+package array;
+
 import junit.framework.TestCase;
 
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @see <a href="https://leetcode.com/problems/degree-of-an-array/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class DegreeOfArray extends TestCase {
     class NumberStat {
         int first;

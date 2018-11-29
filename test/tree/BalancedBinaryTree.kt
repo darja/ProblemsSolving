@@ -1,6 +1,13 @@
+package tree
+
 import junit.framework.TestCase
 import util.TreeNode
 
+/**
+ * @see <a href="https://leetcode.com/problems/balanced-binary-tree/">Problem Description</a>
+ */
+@Suppress("MemberVisibilityCanBePrivate")
+// todo try again
 class BalancedBinaryTree : TestCase() {
     fun isBalanced(root: TreeNode?): Boolean {
         if (root == null) {

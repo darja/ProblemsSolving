@@ -1,7 +1,13 @@
+package map;
+
 import junit.framework.TestCase;
 
 import java.util.HashMap;
 
+/**
+ * @see <a href="https://leetcode.com/problems/contains-duplicate-ii/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class ContainsDuplicate2 extends TestCase {
 
     public void test() {

@@ -1,7 +1,13 @@
+package string;
+
 import junit.framework.TestCase;
 
 import java.util.Stack;
 
+/**
+ * @see <a href="https://leetcode.com/problems/decode-string/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class DecodeString extends TestCase {
     public String decodeString(String s) {
         if (s.isEmpty()) {
@@ -10,7 +16,7 @@ public class DecodeString extends TestCase {
 
         Stack<StringBuilder> processor = new Stack<>();
         processor.push(new StringBuilder());
-        Character prevChar = s.charAt(0);
+        char prevChar = s.charAt(0);
         processor.peek().append(prevChar);
 
         for (int i = 1; i < s.length(); ++i) {

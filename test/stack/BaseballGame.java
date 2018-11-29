@@ -1,7 +1,14 @@
+package stack;
+
 import junit.framework.TestCase;
 
 import java.util.LinkedList;
 
+/**
+ * @see <a href="https://leetcode.com/problems/baseball-game/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
+// todo may try again
 public class BaseballGame extends TestCase {
     public int calPoints(String[] ops) {
         LinkedList<Integer> history = new LinkedList<>();

@@ -1,6 +1,12 @@
+package tree;
+
 import util.TreeNode;
 import util.TreeTestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/add-one-row-to-tree/">Add One Row to Tree</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class AddTreeRow extends TreeTestCase {
     public TreeNode addOneRow(TreeNode root, int v, int d) {
         if (d == 1) {
@@ -14,7 +20,7 @@ public class AddTreeRow extends TreeTestCase {
         return root;
     }
 
-    public void addRowIter(TreeNode root, int v, int d, int level) {
+    private void addRowIter(TreeNode root, int v, int d, int level) {
         if (level == d) {
             TreeNode right = new TreeNode(v);
             right.right = root.right;

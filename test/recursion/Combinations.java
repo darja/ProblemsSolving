@@ -1,12 +1,16 @@
+package recursion;
+
 import util.MatrixTestCase;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
-
+/**
+ * @see <a href="https://leetcode.com/problems/combinations/">Problem Description</a>
+ */
 public class Combinations extends MatrixTestCase {
-    public List<List<Integer>> combine(int n, int k) {
+    private List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new LinkedList<>();
         Stack<Integer> comb = new Stack<>();
         backtrack(result, comb, 0, k, n);

@@ -1,7 +1,13 @@
+package stack;
+
 import junit.framework.TestCase;
 
 import java.util.Stack;
 
+/**
+ * @see <a href="https://leetcode.com/problems/valid-parentheses/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class Braces extends TestCase {
     public void test() {
         assertTrue(isValid("{}[]([])"));

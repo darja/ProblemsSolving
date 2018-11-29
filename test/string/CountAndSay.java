@@ -1,5 +1,11 @@
+package string;
+
 import junit.framework.TestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/count-and-say/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class CountAndSay extends TestCase {
     public void test() {
         assertEquals("1", countAndSay(1));
