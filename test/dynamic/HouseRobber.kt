@@ -1,5 +1,11 @@
+package dynamic
+
 import junit.framework.TestCase
 
+/**
+ * @see <a href="https://leetcode.com/problems/house-robber/">Problem Description</a>
+ */
+@Suppress("MemberVisibilityCanBePrivate")
 class HouseRobber : TestCase() {
     fun rob(nums: IntArray): Int {
         if (nums.isEmpty()) {

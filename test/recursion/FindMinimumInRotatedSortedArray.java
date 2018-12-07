@@ -1,5 +1,11 @@
+package recursion;
+
 import junit.framework.TestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class FindMinimumInRotatedSortedArray extends TestCase {
     public int findMin(int[] nums) {
         return Math.min(findMinIter(nums, 0, nums.length - 1), nums[0]);

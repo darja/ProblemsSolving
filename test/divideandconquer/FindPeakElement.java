@@ -1,5 +1,12 @@
+package divideandconquer;
+
 import util.TestCaseOneOf;
 
+/**
+ * @see <a href="https://leetcode.com/problems/find-peak-element/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
+// todo can be improved
 public class FindPeakElement extends TestCaseOneOf {
     public int findPeakElement(int[] nums) {
         int len = nums.length;

@@ -1,7 +1,11 @@
-
+package recursion
 import util.ListTestCase
 import java.util.*
 
+/**
+ * @see <a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number/">Problem Description</a>
+ */
+@Suppress("MemberVisibilityCanBePrivate")
 class LetterCombinationsPhoneNumber2: ListTestCase() {
     fun letterCombinations(digits: String): List<String> {
         if (digits.isEmpty()) {

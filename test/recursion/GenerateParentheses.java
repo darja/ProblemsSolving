@@ -1,8 +1,14 @@
+package recursion;
+
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @see <a href="https://leetcode.com/problems/generate-parentheses/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class GenerateParentheses extends TestCase {
     public List<String> generateParenthesis(int n) {
         List<String> result = new ArrayList<>();

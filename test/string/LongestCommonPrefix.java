@@ -1,5 +1,12 @@
+package string;
+
 import junit.framework.TestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/longest-common-prefix/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
+// todo can be improved
 public class LongestCommonPrefix extends TestCase {
     public String longestCommonPrefix(String[] strs) {
         if (strs == null || strs.length == 0) {

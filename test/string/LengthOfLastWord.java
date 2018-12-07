@@ -1,8 +1,15 @@
+package string;
+
 import junit.framework.TestCase;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * @see <a href="https://leetcode.com/problems/length-of-last-word/">Problem Description</a>
+ */
+@SuppressWarnings("ALL")
+// todo can be improved
 public class LengthOfLastWord extends TestCase {
     public void test() {
         testSingle("Hello, World", 5);
@@ -15,7 +22,6 @@ public class LengthOfLastWord extends TestCase {
         testSingle("", 0);
         testSingle("  ", 0);
     }
-
 
     public void testSingle(String input, int expected) {
         assertEquals(expected, lengthOfLastWord(input));

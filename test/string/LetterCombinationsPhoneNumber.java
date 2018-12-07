@@ -1,8 +1,14 @@
+package string;
+
 import junit.framework.TestCase;
 
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * @see <a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class LetterCombinationsPhoneNumber extends TestCase {
     public List<String> letterCombinations(String digits) {
         List<String> variants = new LinkedList<>();

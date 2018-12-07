@@ -1,7 +1,13 @@
+package string;
+
 import junit.framework.TestCase;
 
 import java.util.HashMap;
 
+/**
+ * @see <a href="https://leetcode.com/problems/roman-to-integer/">Problem Description</a>
+ */
+@SuppressWarnings("ALL")
 public class RomanToInt extends TestCase {
     public int romanToInt(String s) {
         HashMap<Character, Integer> romanSymbols = new HashMap<>();

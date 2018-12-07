@@ -1,3 +1,5 @@
+package recursion;
+
 import util.ListTestCase;
 
 import java.util.ArrayList;
@@ -5,6 +7,11 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * @see <a href="https://leetcode.com/problems/letter-case-permutation/">Problem Description</a>
+ */
+@SuppressWarnings("ALL")
+// todo can be improved
 public class LetterCasePermutation extends ListTestCase {
     public List<String> letterCasePermutation(String S) {
         List<String> result = new LinkedList<>();

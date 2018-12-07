@@ -1,7 +1,13 @@
+package set;
+
 import util.ArrayTestCase;
 
 import java.util.HashSet;
 
+/**
+ * @see <a href="https://leetcode.com/problems/intersection-of-two-arrays/">Problem Description</a>
+ */
+@SuppressWarnings("ALL")
 public class IntersectionOfTwoArrays extends ArrayTestCase {
     public int[] intersection(int[] nums1, int[] nums2) {
         HashSet<Integer> set1 = new HashSet<>();

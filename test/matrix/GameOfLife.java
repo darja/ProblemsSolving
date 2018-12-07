@@ -1,5 +1,10 @@
+package matrix;
+
 import util.MatrixTestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/game-of-life/">Problem Description</a>
+ */
 public class GameOfLife extends MatrixTestCase {
     private void gameOfLife(int[][] board) {
         if (board == null) return;

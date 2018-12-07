@@ -1,5 +1,11 @@
+package string
+
 import junit.framework.TestCase
 
+/**
+ * @see <a href="https://leetcode.com/problems/integer-to-english-words/">Problem Description</a>
+ */
+@Suppress("MemberVisibilityCanBePrivate")
 class IntToEnglish : TestCase() {
     fun numberToWords(num: Int): String {
         if (num == 0) {

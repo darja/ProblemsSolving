@@ -1,6 +1,12 @@
+package list;
+
 import util.ListNode;
 import util.ListNodeTestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/linked-list-cycle/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class LinkedListCycle extends ListNodeTestCase {
     public boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {

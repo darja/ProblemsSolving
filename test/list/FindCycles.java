@@ -1,6 +1,12 @@
+package list;
+
 import junit.framework.TestCase;
 import util.ListNode;
 
+/**
+ * @see <a href="https://leetcode.com/problems/linked-list-cycle/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class FindCycles extends TestCase {
     public void test1() {
         ListNode first = new ListNode(3);

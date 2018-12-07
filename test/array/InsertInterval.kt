@@ -1,15 +1,20 @@
-
+package array
 import junit.framework.TestCase
 import util.Interval
 import java.util.*
 
+/**
+ * @see <a href="https://leetcode.com/problems/insert-interval/">Problem Description</a>
+ */
+@Suppress("MemberVisibilityCanBePrivate")
+// todo can be improved
 class InsertInterval: TestCase() {
     fun insert(intervals: List<Interval>, newInterval: Interval): List<Interval> {
         if (intervals.isEmpty()) {
             return listOf(newInterval)
         }
 
-        var n = intervals.size
+        val n = intervals.size
         val updatedIntervals = ArrayList<Interval>(n + 1)
 
         var i = 0
@@ -19,7 +24,7 @@ class InsertInterval: TestCase() {
         }
 
         if (i < n && intervals[i].start <= newInterval.end) {
-            var mergedInterval = Interval(
+            val mergedInterval = Interval(
                 Math.min(newInterval.start, intervals[i].start),
                 Math.max(newInterval.end, intervals[i].end)
             )
@@ -161,7 +166,7 @@ class InsertInterval: TestCase() {
 
         TestCase.assertEquals(result.size, expected.size)
 
-        for (i in 1..expected.size - 1) {
+        for (i in 1 until expected.size) {
             assertEquals(expected[i], result[i])
         }
     }

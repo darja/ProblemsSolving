@@ -1,21 +1,12 @@
+package divideandconquer;
+
 import junit.framework.TestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/kth-largest-element-in-an-array/">Problem Description</a>
+ */
 public class FindKthLargest extends TestCase {
     public void test() {
-        Quicksort qs = new Quicksort();
-
-//        int[] arr = new int[] {3,2};
-//        int[] arr = new int[] {3,2,3,1,2,4,5,5,6,7,7,8,2,3,1,1,1,10,11,5,6,2,4,7,8,5,6};
-//        qs.sort(arr);
-//        for (int i = 0; i < arr.length; ++i) {
-//            System.out.print(String.format("%s:\t%s\n", arr.length - i, arr[i]));
-//        }
-//        assertTrue(validate(arr, 1, 2));
-//
-//        arr = new int[] {2, 1};
-//        qs.sort(arr);
-//        assertTrue(validate(arr, 1, 2));
-
         assertEquals(12, findKthLargest(new int[] {8,9,4,12,3,2,1}, 1));
         assertEquals(9, findKthLargest(new int[] {8,9,4,12,3,2,1}, 2));
         assertEquals(3, findKthLargest(new int[] {8,9,4,12,3,2,1}, 5));

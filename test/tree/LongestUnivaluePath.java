@@ -1,6 +1,11 @@
+package tree;
+
 import junit.framework.TestCase;
 import util.TreeNode;
 
+/**
+ * @see <a href="https://leetcode.com/problems/longest-univalue-path/">Problem Description</a>
+ */
 @SuppressWarnings("WeakerAccess")
 public class LongestUnivaluePath extends TestCase {
     private int maxPath = 0;

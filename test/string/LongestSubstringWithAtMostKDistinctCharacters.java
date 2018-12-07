@@ -1,8 +1,14 @@
+package string;
+
 import junit.framework.TestCase;
 
 import java.util.HashMap;
 
+/**
+ * @see <a href="https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/">Problem Description</a>
+ */
 @SuppressWarnings("WeakerAccess")
+// todo can be improved
 public class LongestSubstringWithAtMostKDistinctCharacters extends TestCase {
     public int lengthOfLongestSubstringKDistinct(String s, int k) {
         if (s == null) return 0;

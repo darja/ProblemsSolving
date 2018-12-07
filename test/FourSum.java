@@ -5,6 +5,11 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * @see <a href="https://leetcode.com/problems/4sum/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
+// todo not accepted
 public class FourSum extends NestedListTestCase {
     public List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> result = new LinkedList<>();

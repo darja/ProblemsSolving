@@ -1,7 +1,14 @@
+package string;
+
 import junit.framework.TestCase;
 
 import java.util.HashMap;
 
+/**
+ * @see <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">Problem Description</a>
+ */
+@SuppressWarnings("ALL")
+// todo can be improved
 public class LongestSubstringWithoutRepeatingChars extends TestCase {
     public int lengthOfLongestSubstring(String s) {
         HashMap<Character, Integer> subMap = new HashMap<>();

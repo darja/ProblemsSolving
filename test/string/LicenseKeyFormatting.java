@@ -1,6 +1,12 @@
+package string;
+
 import junit.framework.TestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/license-key-formatting/">Problem Description</a>
+ */
 @SuppressWarnings("WeakerAccess")
+// todo should be improved
 public class LicenseKeyFormatting extends TestCase {
     public String licenseKeyFormatting(String S, int K) {
         StringBuilder sb = new StringBuilder();

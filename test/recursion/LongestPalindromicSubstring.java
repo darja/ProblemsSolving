@@ -1,5 +1,11 @@
+package recursion;
+
 import junit.framework.TestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/longest-palindromic-substring/">Problem Description</a>
+ */
+@SuppressWarnings("ALL")
 public class LongestPalindromicSubstring extends TestCase{
     public String longestPalindrome(String s) {
         int len = s.length();

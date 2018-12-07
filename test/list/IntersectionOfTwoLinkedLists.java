@@ -1,6 +1,13 @@
+package list;
+
 import util.ListNode;
 import util.ListNodeTestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/intersection-of-two-linked-lists/">Problem Description</a>
+ */
+@SuppressWarnings("ALL")
+// todo can be improved
 public class IntersectionOfTwoLinkedLists extends ListNodeTestCase {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         int lenA = getLength(headA);

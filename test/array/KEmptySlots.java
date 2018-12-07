@@ -1,8 +1,14 @@
+package array;
+
 import junit.framework.TestCase;
 
 import java.util.TreeSet;
 
+/**
+ * @see <a href="https://leetcode.com/problems/k-empty-slots/">Problem Description</a>
+ */
 @SuppressWarnings("WeakerAccess")
+// todo can be improved
 public class KEmptySlots extends TestCase {
     public int kEmptySlots(int[] flowers, int k) {
         TreeSet<Integer> blooming = new TreeSet<>();

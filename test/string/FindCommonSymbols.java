@@ -1,3 +1,5 @@
+package string;
+
 import junit.framework.TestCase;
 
 import java.util.HashSet;
