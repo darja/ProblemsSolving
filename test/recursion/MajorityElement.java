@@ -1,5 +1,11 @@
+package recursion;
+
 import junit.framework.TestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/majority-element/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class MajorityElement extends TestCase {
     public void test() {
         testMajorityElement(1, new int[] {1});

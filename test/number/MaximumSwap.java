@@ -1,5 +1,12 @@
+package number;
+
 import junit.framework.TestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/maximum-swap/">Problem Description</a>
+ */
+// todo can be improved
+@SuppressWarnings("WeakerAccess")
 public class MaximumSwap extends TestCase{
     public int maximumSwap(int num) {
         int len = 0;

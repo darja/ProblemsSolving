@@ -1,6 +1,13 @@
+package list;
+
 import junit.framework.TestCase;
 import util.ListNode;
 
+/**
+ * @see <a href="https://leetcode.com/problems/merge-two-sorted-lists/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
+// todo should be improved
 public class MergeTwoLists extends TestCase {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) return l2;

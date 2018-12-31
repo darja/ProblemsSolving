@@ -1,6 +1,12 @@
+package tree;
+
 import util.TreeNode;
 import util.TreeTestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/maximum-binary-tree/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class MaximumBinaryTree extends TreeTestCase {
     public TreeNode constructMaximumBinaryTree(int[] nums) {
         return constructMaximumBinaryTreeFromRange(nums, 0, nums.length);

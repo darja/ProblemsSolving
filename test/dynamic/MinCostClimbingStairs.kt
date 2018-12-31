@@ -1,5 +1,12 @@
+@file:Suppress("MemberVisibilityCanBePrivate")
+
+package dynamic
+
 import junit.framework.TestCase
 
+/**
+ * @see <a href="https://leetcode.com/problems/min-cost-climbing-stairs/">Problem Description</a>
+ */
 class MinCostClimbingStairs: TestCase() {
     fun minCostClimbingStairs(cost: IntArray): Int {
         if (cost.size < 2) {

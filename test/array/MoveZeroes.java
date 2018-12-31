@@ -1,5 +1,11 @@
+package array;
+
 import util.ArrayTestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/move-zeroes/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class MoveZeroes extends ArrayTestCase {
     public void moveZeroes(int[] nums) {
         int n = nums.length;

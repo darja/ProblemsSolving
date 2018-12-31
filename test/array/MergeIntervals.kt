@@ -1,21 +1,26 @@
-
+package array
 import junit.framework.TestCase
 import util.Interval
 import java.util.*
 
+/**
+ * @see <a href="https://leetcode.com/problems/merge-intervals/">Problem Description</a>
+ */
+// todo should be improved
+@Suppress("MemberVisibilityCanBePrivate")
 class MergeIntervals: TestCase() {
     fun merge(intervals: List<Interval>): List<Interval> {
         if (intervals.size <= 1) {
             return intervals
         }
 
-        var sorted = intervals.sortedBy { it.start }
+        val sorted = intervals.sortedBy { it.start }
 
-        var result = LinkedList<Interval>()
+        val result = LinkedList<Interval>()
         var last = sorted[0]
         result.add(last)
 
-        for (i in 1..sorted.size-1) {
+        for (i in 1 until sorted.size) {
             if (last.end >= sorted[i].start) {
                 last.end = Math.max(sorted[i].end, last.end)
             } else {
@@ -69,10 +74,10 @@ class MergeIntervals: TestCase() {
 
         assertEquals(result.size, expected.size)
 
-        for (i in 1..expected.size - 1) {
+        for (i in 1 until expected.size) {
             val expectedItem = expected[i]
             var found = false
-            for (j in 1..intervals.size - 1) {
+            for (j in 1 until intervals.size) {
                 if (result[j] == expectedItem) {
                     found = true
                     break

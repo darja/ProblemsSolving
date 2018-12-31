@@ -1,5 +1,12 @@
+package array;
+
 import junit.framework.TestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/maximum-subarray/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
+// todo should be improved
 public class MaximumSubarray extends TestCase {
     public int maxSubArray(int[] nums) {
         if (nums == null || nums.length == 0) {

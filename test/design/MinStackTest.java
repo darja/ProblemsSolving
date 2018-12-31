@@ -1,4 +1,5 @@
-import design.MinStack;
+package design;
+
 import junit.framework.TestCase;
 
 public class MinStackTest extends TestCase {
