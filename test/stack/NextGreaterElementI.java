@@ -1,8 +1,14 @@
+package stack;
+
 import util.ArrayTestCase;
 
 import java.util.HashMap;
 import java.util.Stack;
 
+/**
+ * @see <a href="https://leetcode.com/problems/next-greater-element-i/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class NextGreaterElementI extends ArrayTestCase {
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
         HashMap<Integer, Integer> nextEl = new HashMap<>();

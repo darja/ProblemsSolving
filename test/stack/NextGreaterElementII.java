@@ -1,9 +1,15 @@
+package stack;
+
 import util.ArrayTestCase;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
+/**
+ * @see <a href="https://leetcode.com/problems/next-greater-element-ii/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class NextGreaterElementII extends ArrayTestCase {
     public int[] nextGreaterElements(int[] nums) {
         Stack<Integer> stack = new Stack<>();

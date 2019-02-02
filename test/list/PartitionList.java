@@ -1,6 +1,12 @@
+package list;
+
 import util.ListNode;
 import util.ListNodeTestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/partition-list/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class PartitionList extends ListNodeTestCase {
     public ListNode partition(ListNode head, int x) {
         if (head == null || head.next == null) {

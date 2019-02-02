@@ -1,5 +1,11 @@
+package recursion;
+
 import junit.framework.TestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/number-of-islands/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class NumberOfIslands extends TestCase {
     public int numIslands(char[][] grid) {
         int count = 0;

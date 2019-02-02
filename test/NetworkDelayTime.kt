@@ -1,28 +1,33 @@
 import junit.framework.TestCase
 
+/**
+ * @see <a href="https://leetcode.com/problems/network-delay-time/">Problem Description</a>
+ */
+// todo should be improved
 class NetworkDelayTime : TestCase() {
+    @Suppress("MemberVisibilityCanBePrivate")
     fun networkDelayTime(times: Array<IntArray>, N: Int, K: Int): Int {
-        var routes = Array(N) { arrayOfNulls<Int>(N) }
+        val routes = Array(N) { arrayOfNulls<Int>(N) }
 
         for (time in times) {
-            routes[time[0]-1][time[1]-1] = time[2];
+            routes[time[0]-1][time[1]-1] = time[2]
         }
 
-        for (i in 0..N-1) {
+        for (i in 0 until N) {
             routes[i][i] = 0
         }
 
 
-        var isFinal = true
+        var isFinal: Boolean
         do {
             isFinal = true
-            for (i in 0..N-1) {
-                for (j in 0..N-1) {
+            for (i in 0 until N) {
+                for (j in 0 until N) {
                     if (i == j) {
                         continue
                     }
 
-                    for (k in 0..N-1) {
+                    for (k in 0 until N) {
                         if (i == k || j == k) {
                             continue
                         }
@@ -39,18 +44,18 @@ class NetworkDelayTime : TestCase() {
             }
         } while (!isFinal)
 
-        var result = 0;
-        for (i in 0..N-1) {
+        var result = 0
+        for (i in 0 until N) {
             val time = routes[K-1][i] ?: return -1
             if (time > result) {
                 result = time
             }
         }
 
-        return result;
+        return result
     }
 
-    public fun testOk() {
+    fun testOk() {
         val times = arrayOf(
                 intArrayOf(1, 2, 1),
                 intArrayOf(1, 3, 5),
@@ -75,7 +80,7 @@ class NetworkDelayTime : TestCase() {
 
     }
 
-    public fun testNoRoute() {
+    fun testNoRoute() {
         val times = arrayOf(
                 intArrayOf(1, 2, 1),
                 intArrayOf(1, 3, 5),
@@ -95,8 +100,8 @@ class NetworkDelayTime : TestCase() {
         assertEquals(-1, networkDelayTime(times, 4, 4))
     }
 
-    public fun testSample() {
-        var times = arrayOf(
+    fun testSample() {
+        val times = arrayOf(
                 intArrayOf(2,1,1),
                 intArrayOf(2,3,1),
                 intArrayOf(3,4,1)

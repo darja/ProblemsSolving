@@ -1,5 +1,11 @@
+package dynamic
+
 import junit.framework.TestCase
 
+/**
+ * @see <a href="https://leetcode.com/problems/paint-house/">Problem Description</a>
+ */
+@Suppress("MemberVisibilityCanBePrivate")
 class PaintHouse : TestCase() {
     fun minCost(costs: Array<IntArray>): Int {
         if (costs.isEmpty()) {

@@ -1,5 +1,11 @@
+package math;
+
 import junit.framework.TestCase;
 
+/**
+ * @see <a href="https://leetcode.com/problems/palindrome-number/">Problem Description</a>
+ */
+@SuppressWarnings("WeakerAccess")
 public class PalindromeNumber extends TestCase {
     public boolean isPalindrome(int x) {
         int size = getNumberLength(x);

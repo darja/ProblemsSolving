@@ -1,8 +1,14 @@
+package recursion;
+
 import junit.framework.TestCase;
 
 import java.util.HashSet;
 
+/**
+ * @see <a href="https://leetcode.com/problems/next-closest-time/">Problem Description</a>
+ */
 @SuppressWarnings("WeakerAccess")
+// todo can be improved
 public class NextClosestTime extends TestCase {
     public String nextClosestTime(String time) {
         HashSet<Byte> digitsSet = new HashSet<>();
